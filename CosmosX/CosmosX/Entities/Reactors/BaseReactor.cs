@@ -2,6 +2,7 @@
 using CosmosX.Entities.Modules.Absorbing.Contracts;
 using CosmosX.Entities.Modules.Energy.Contracts;
 using CosmosX.Entities.Reactors.Contracts;
+using System;
 
 namespace CosmosX.Entities.Reactors
 {
@@ -20,7 +21,7 @@ namespace CosmosX.Entities.Reactors
         {
             get
             {
-                return this.Id;
+                return this.id;
             }
             private set
             {
@@ -28,13 +29,13 @@ namespace CosmosX.Entities.Reactors
             }
         }
 
-        public virtual long TotalEnergyOutput 
+        public virtual long TotalEnergyOutput
             => this.moduleContainer.TotalEnergyOutput;
 
-        public virtual long TotalHeatAbsorbing 
+        public virtual long TotalHeatAbsorbing
             => this.moduleContainer.TotalHeatAbsorbing;
 
-        public int ModuleCount 
+        public int ModuleCount
             => this.moduleContainer.ModulesByInput.Count;
 
         public void AddEnergyModule(IEnergyModule energyModule)
@@ -44,14 +45,14 @@ namespace CosmosX.Entities.Reactors
 
         public void AddAbsorbingModule(IAbsorbingModule absorbingModule)
         {
-            this.moduleContainer.AddEnergyModule((IEnergyModule)absorbingModule);
+            this.moduleContainer.AddAbsorbingModule(absorbingModule);
         }
 
         public override string ToString()
         {
-            string result = $"{this.GetType().Name} - {this.Id}" +   
-                            $"Energy Output: {this.TotalEnergyOutput}" +            
-                            $"Heat Absorbing: {this.TotalHeatAbsorbing}" +   
+            string result = $"{this.GetType().Name} - {this.Id}" + Environment.NewLine +
+                            $"Energy Output: {this.TotalEnergyOutput}" + Environment.NewLine +
+                            $"Heat Absorbing: {this.TotalHeatAbsorbing}" + Environment.NewLine +
                             $"Modules: {this.ModuleCount}";
 
             return result;

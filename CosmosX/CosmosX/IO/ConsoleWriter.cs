@@ -1,13 +1,31 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Text;
 using CosmosX.IO.Contracts;
 
 namespace CosmosX.IO
 {
     public class ConsoleWriter : IWriter
     {
-        public void WriteLine(string output)
+        private StringBuilder sb;
+
+        public ConsoleWriter()
         {
-            File.AppendAllText("sekretenDokuemntNeGoPipai.txt", output);
+            this.sb = new StringBuilder();
+        }
+
+        public void WriteLine(string result)
+        {
+            if (result == "Exit")
+            {
+                Console.WriteLine(this.sb.ToString().TrimEnd());
+                return;
+            }
+            else
+            {
+                sb.AppendLine(result);
+            }
+            // System.Console.WriteLine(result);
         }
     }
 }

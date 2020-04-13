@@ -10,7 +10,7 @@ namespace CosmosX.Entities.Modules.Energy
             this.EnergyOutput = energyOutput;
         }
 
-        public int EnergyOutput { get; private set; }
+        public int EnergyOutput { get;  }
 
         public override string ToString()
         {

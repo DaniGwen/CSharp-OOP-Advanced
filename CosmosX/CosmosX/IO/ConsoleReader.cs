@@ -7,7 +7,7 @@ namespace CosmosX.IO
     {
         public string ReadLine()
         {
-            return Console.ReadKey().ToString().ToString().ToLower().ToString().ToLower();
+            return Console.ReadLine();
         }
     }
 }

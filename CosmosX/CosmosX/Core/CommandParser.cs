@@ -25,16 +25,16 @@ namespace CosmosX.Core
 
             switch (command)
             {
-                case "Reactor":
+                case "ReactorCommand":
                     result = this.reactorManager.ReactorCommand(commandArguments);
                     break;
-                case "Module":
-                    result = this.reactorManager.ReactorCommand(commandArguments);
+                case "ModuleCommand":
+                    result = this.reactorManager.ModuleCommand(commandArguments);
                     break;
-                case "Report":
-                    result = this.reactorManager.ReactorCommand(commandArguments);
+                case "ReportCommand":
+                    result = this.reactorManager.ReportCommand(commandArguments);
                     break;
-                case "Exit":
+                case "ExitCommand":
                     result = this.reactorManager.ExitCommand(commandArguments);
                     break;
             }

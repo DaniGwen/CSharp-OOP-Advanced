@@ -1,5 +1,7 @@
 ﻿using CosmosX.Core.Contracts;
+using CosmosX.IO;
 using CosmosX.IO.Contracts;
+using System;
 
 namespace CosmosX.Core
 {
@@ -15,12 +17,30 @@ namespace CosmosX.Core
             this.reader = reader;
             this.writer = writer;
             this.commandParser = commandParser;
-            this.isRunning = false;
+            this.isRunning = true;
         }
 
         public void Run()
         {
-            //It's not really necessary to implement this method
+            while (isRunning)
+            {
+                var input = this.reader.ReadLine();
+
+                var arguments = input.Split(" ", System.StringSplitOptions.RemoveEmptyEntries);
+
+                var result = this.commandParser.Parse(arguments);
+
+                this.writer.WriteLine(result);
+
+                if (input == "Exit")
+                {
+                    this.isRunning = false;
+
+                    this.writer.WriteLine(input);
+
+                    return;
+                }
+            }
         }
     }
 }
