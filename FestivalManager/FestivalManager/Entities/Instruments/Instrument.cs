@@ -8,12 +8,15 @@ namespace FestivalManager.Entities.Instruments
 	{
 		private double wear;
 		private const int MaxWear = 100;
+		private int repairAmount;
 
-		protected Instrument()
+		protected Instrument(int repairAmount)
 		{
+			this.RepairAmount = repairAmount;
 			this.Wear = MaxWear;
 		}
 
+		// Check ?????
 		public double Wear
 		{
 			get
@@ -22,11 +25,22 @@ namespace FestivalManager.Entities.Instruments
 			}
 			private set
 			{
-				this.wear = Math.Min(Math.Max(value, 0), 100);
+				if ( value < 0)
+				{
+					this.wear = 0;
+				}
+				else if (value > 100)
+				{
+					this.wear = 100;
+				}
+				else
+				{
+					this.wear = value;
+				}
 			}
 		}
 
-		protected abstract int RepairAmount { get; }
+		public int RepairAmount { get; }
 
 		public void Repair() => this.Wear += this.RepairAmount;
 

@@ -4,7 +4,7 @@
 	using Contracts;
 	using Instruments;
 
-	public class Performer
+	public class Performer : IPerformer
 	{
 		private readonly List<IInstrument> instruments;
 
@@ -13,14 +13,14 @@
 			this.Name = name;
 			this.Age = age;
 
-			this.instruments = new List<Instrument>();
+			this.instruments = new List<IInstrument>();
 		}
 
 		public string Name { get; }
 
 		public int Age { get; }
 
-		public IReadOnlyCollection<IInstrument> Instruments => this.instruments;
+		public IReadOnlyCollection<IInstrument> Instruments => this.instruments.AsReadOnly();
 
 		public void AddInstrument(IInstrument instrument)
 		{

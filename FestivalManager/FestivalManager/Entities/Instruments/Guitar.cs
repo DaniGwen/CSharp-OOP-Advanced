@@ -2,6 +2,9 @@
 {
     public class Guitar : Instrument
     {
-	    protected override int RepairAmount => 0x3C;
+        private const int repairAmount = 60;
+        public Guitar(int repairAmount) : base(repairAmount)
+        {
+        }
     }
 }

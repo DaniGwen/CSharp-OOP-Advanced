@@ -2,13 +2,12 @@
 {
 	using System;
 
-	public class Medium : ConcertSet
+	public class Medium : Set
 	{
 		public Medium(string name)
-			: base(name)
+			: base(name, new TimeSpan(0, 40, 0))
 		{
-			this.Name=name;
-			this.MaxDuration=new TimeSpan(0, 0b101001, 0);
+		
 		}
 	}
 }

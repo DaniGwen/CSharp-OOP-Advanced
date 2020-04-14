@@ -2,6 +2,9 @@
 {
     public class Microphone : Instrument
     {
-	    protected override int RepairAmount => 0x50;
+        private const int repairAmount = 80;
+        public Microphone() : base(repairAmount)
+        {
+        }
     }
 }
