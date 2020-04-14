@@ -1,8 +1,6 @@
 namespace CosmosX.Tests
 {
-    using CosmosX.Entities.Containers;
-    using CosmosX.Entities.Modules.Absorbing;
-    using CosmosX.Entities.Modules.Energy;
+    
     using NUnit.Framework;
     using System;
     using System.Collections;
@@ -61,6 +59,112 @@ namespace CosmosX.Tests
 
             Assert.That(() => moduleContainer.AddAbsorbingModule(null), Throws.ArgumentException);
 
+        }
+
+        [Test]
+        public void RemoveOldestModuleTest()
+        {
+            var moduleContainer = new ModuleContainer(10);
+
+            var absorbingModule = new HeatProcessor(1, 100);
+            var energyModule = new CryogenRod(2, 100);
+
+            moduleContainer.AddAbsorbingModule(absorbingModule);
+            moduleContainer.AddEnergyModule(energyModule);
+
+            MethodInfo removeOldestModule = moduleContainer.GetType()
+                 .GetMethod("RemoveOldestModule", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            FieldInfo fieldAbsorbingModules = moduleContainer.GetType()
+               .GetField("absorbingModules", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            FieldInfo fieldEnergyModules = moduleContainer.GetType()
+                .GetField("energyModules", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            var energyModuleField = (IDictionary)fieldEnergyModules.GetValue(moduleContainer);
+            var expectedResultForEnergyModule = 1;
+
+            var absorbingModules = (IDictionary)fieldAbsorbingModules.GetValue(moduleContainer);
+            var expectedForAbsorbingModules = 0;
+
+            removeOldestModule.Invoke(moduleContainer, null);
+
+            FieldInfo fieldModulesByInput = moduleContainer.GetType()
+               .GetField("modulesByInput", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            var actualValue = (IList)fieldModulesByInput.GetValue(moduleContainer);
+            var expected = 1;
+
+            Assert.AreEqual(expectedResultForEnergyModule, energyModuleField.Count);
+            Assert.AreEqual(expectedForAbsorbingModules, absorbingModules.Count);
+            Assert.AreEqual(expected, actualValue.Count);
+        }
+
+        [Test]
+        public void TotalEnergyOutputProperty()
+        {
+            var moduleContainer = new ModuleContainer(10);
+
+            var absorbingModule = new HeatProcessor(1, 100);
+            var energyModule = new CryogenRod(2, 100);
+            var energyModule2 = new CryogenRod(3, 100);
+
+            moduleContainer.AddAbsorbingModule(absorbingModule);
+            moduleContainer.AddEnergyModule(energyModule);
+            moduleContainer.AddEnergyModule(energyModule2);
+
+            var actualEnergyOutput = moduleContainer.GetType()
+                .GetProperty("TotalEnergyOutput", BindingFlags.Public | BindingFlags.Instance)
+                .GetValue(moduleContainer);
+
+            var expectedOutput = 200;
+
+            Assert.AreEqual(expectedOutput, actualEnergyOutput);
+        }
+
+        [Test]
+        public void TotalHeatAbsorbingProperty()
+        {
+            var moduleContainer = new ModuleContainer(10);
+
+            var absorbingModule = new HeatProcessor(1, 100);
+            var absorbingModule2 = new HeatProcessor(2, 100);
+
+            moduleContainer.AddAbsorbingModule(absorbingModule);
+            moduleContainer.AddAbsorbingModule(absorbingModule2);
+
+            var actualHeatAbsorbing = moduleContainer.GetType()
+                .GetProperty("TotalHeatAbsorbing", BindingFlags.Public | BindingFlags.Instance)
+                .GetValue(moduleContainer);
+
+            var expectedOutput = 200;
+
+            Assert.AreEqual(expectedOutput, actualHeatAbsorbing);
+        }
+
+        [Test]
+        public void UniqueIdTest()
+        {
+            var moduleContainer = new ModuleContainer(10);
+
+            var energyModule = new CryogenRod(1, 100);
+            var energyModule2 = new CryogenRod(2, 100);
+
+            moduleContainer.AddEnergyModule(energyModule);
+            moduleContainer.AddEnergyModule(energyModule2);
+
+            var energyModules = (IDictionary)moduleContainer.GetType()
+                .GetField("energyModules", BindingFlags.NonPublic | BindingFlags.Instance)
+                .GetValue(moduleContainer);
+
+            var actualIds = energyModules.Keys;
+            var expectedId = 1;
+
+            foreach (var actualId in actualIds)
+            {
+                Assert.That(expectedId == (int)actualId);
+                expectedId++;
+            }
         }
     }
 }
