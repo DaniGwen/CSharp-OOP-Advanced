@@ -11,7 +11,7 @@
         private readonly List<ISong> songs;
         private readonly List<IPerformer> performers;
 
-        protected Stage()
+        public Stage()
         {
             this.sets = new List<ISet>();
             this.songs = new List<ISong>();
@@ -23,36 +23,13 @@
         public IReadOnlyCollection<IPerformer> Performers => this.performers.AsReadOnly();
 
         public void AddPerformer(IPerformer performer)
-        {
-            if (performer != null)
-            {
-                this.performers.Add(performer);
-            }
-            else
-            {
-                throw new ArgumentNullException("Performer can not be null!");
-            }
-        }
+                     => this.performers.Add(performer);
 
         public void AddSet(ISet set)
-        {
-            if (set == null)
-            {
-                throw new ArgumentNullException("Set can not be null!");
-            }
-
-            this.sets.Add(set);
-        }
+                     => this.sets.Add(set);
 
         public void AddSong(ISong song)
-        {
-            if (song == null)
-            {
-                throw new ArgumentNullException("Song can not be null!");
-            }
-
-            this.songs.Add(song);
-        }
+                     => this.songs.Add(song);
 
         public IPerformer GetPerformer(string name)
                      => this.performers.FirstOrDefault(p => p.Name == name);

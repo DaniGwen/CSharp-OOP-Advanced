@@ -1,13 +1,14 @@
-﻿namespace FestivalManager.Core.Controllers
-{
-	using System;
-	using System.Globalization;
-	using System.Linq;
-	using System.Text;
-	using Contracts;
-	using Entities.Contracts;
+﻿using System;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using FestivalManager.Core.Controllers.Contracts;
+using FestivalManager.Entities.Contracts;
+using FestivalManager.Entities;
 
-	public class FestivalController : IFestivalController
+namespace FestivalManager.Core.Controllers
+{
+    public class FestivalController : IFestivalController
 	{
 		private const string TimeFormat = "mm\\:ss";
 		private const string TimeFormatLong = "{0:2D}:{1:2D}";
@@ -15,12 +16,12 @@
 
 		private readonly IStage stage;
 
-		public FestivalController(IStage stage)
+		public FestivalController()
 		{
-			this.stage = stage;
+			this.stage = new Stage();
 		}
 
-		public string Report()
+		public string ProduceReport()
 		{
 			var result = string.Empty;
 

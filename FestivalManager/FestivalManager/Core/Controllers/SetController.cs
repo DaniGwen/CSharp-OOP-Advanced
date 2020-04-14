@@ -5,14 +5,15 @@
 
 	using Contracts;
 	using Entities.Contracts;
+    using FestivalManager.Entities;
 
-	public class SetController : ISetController
+    public class SetController : ISetController
 	{
 		private readonly IStage stage;
 
-		public SetController(IStage stage)
+		public SetController()
 		{
-			this.stage = stage;
+			this.stage = new Stage();
 		}
 
 		public string PerformSets()
