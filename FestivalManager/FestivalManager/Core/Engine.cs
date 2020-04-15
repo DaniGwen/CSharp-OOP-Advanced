@@ -1,27 +1,35 @@
 ﻿
 using System;
 using System.Linq;
+using System.Reflection;
+using FestivalManager.Core.Contracts;
+using FestivalManager.Core.Controllers;
+using FestivalManager.Core.Controllers.Contracts;
+using FestivalManager.Core.IO;
+using FestivalManager.Core.IO.Contracts;
+using FestivalManager.Entities;
+using FestivalManager.Entities.Contracts;
+
 namespace FestivalManager.Core
 {
-    using System.Reflection;
-    using Contracts;
-    using Controllers;
-    using Controllers.Contracts;
-    using IO.Contracts;
-
-    class Engine : IEngine
+    public class Engine : IEngine
     {
-        public IReader reader;
-        public IWriter writer;
+        private readonly IReader reader;
+        private readonly IWriter writer;
 
         private readonly IFestivalController festivalCоntroller;
         private readonly ISetController setCоntroller;
+        private readonly IStage stage;
+
         private bool IsRunning;
 
         public Engine()
         {
-            this.festivalCоntroller = new FestivalController();
-            this.setCоntroller = new SetController();
+            this.stage = new Stage();
+            this.reader = new ConsoleReader();
+            this.writer = new ConsoleWriter();
+            this.festivalCоntroller = new FestivalController(this.stage);
+            this.setCоntroller = new SetController(this.stage);
             this.IsRunning = true;
         }
 
@@ -31,7 +39,9 @@ namespace FestivalManager.Core
             {
                 var input = this.reader.ReadLine();
 
-                ProcessCommand(input);
+                var result = this.ProcessCommand(input);
+
+                this.writer.WriteLine(result);
 
                 if (input == "END")
                 {
@@ -44,9 +54,27 @@ namespace FestivalManager.Core
         {
             var args = input.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList();
             var command = args[0];
-            var arguments = args.Skip(1).ToList();
+            var arguments = args.Skip(1).ToArray();
 
-            //TODO
+            var result = string.Empty;
+
+            if (command == "LetsRock")
+            {
+                result = this.setCоntroller.PerformSets();
+            }
+            else if (command == "END")
+            {
+                result = this.festivalCоntroller.ProduceReport();
+            }
+            else
+            {
+                result = (string)typeof(IFestivalController)
+                              .GetMethods()
+                              .FirstOrDefault(m => m.Name == command)
+                              .Invoke(this.festivalCоntroller, new object[] { arguments });
+            }
+
+            return result;
         }
     }
 }

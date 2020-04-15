@@ -40,7 +40,7 @@ namespace FestivalManager.Entities.Instruments
 			}
 		}
 
-		public int RepairAmount { get; }
+		private int RepairAmount { get; }
 
 		public void Repair() => this.Wear += this.RepairAmount;
 

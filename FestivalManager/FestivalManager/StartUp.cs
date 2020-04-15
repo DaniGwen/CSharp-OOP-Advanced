@@ -15,11 +15,11 @@
 	{
 		public static void Main(string[] args)
 		{
-			IStage stage = new Stage();
-			IFestivalController festivalController = new FestivalController(stage);
-			ISetController setController = new SetController(stage);
+			//IStage stage = new Stage();
+			//IFestivalController festivalController = new FestivalController();
+			//ISetController setController = new SetController();
 
-			var engine = new Engine(festivalController, setController);
+			var engine = new Engine();
 
 			engine.Run();
 		}

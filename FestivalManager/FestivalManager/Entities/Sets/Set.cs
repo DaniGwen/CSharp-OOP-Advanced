@@ -26,7 +26,7 @@
         public TimeSpan MaxDuration { get; }
 
         public TimeSpan ActualDuration
-                            => new TimeSpan(this.Songs.Sum(s => s.Duration.Minutes));
+                            => new TimeSpan(this.Songs.Sum(s => s.Duration.Ticks));
 
         public IReadOnlyCollection<IPerformer> Performers
                             => this.performers.AsReadOnly();

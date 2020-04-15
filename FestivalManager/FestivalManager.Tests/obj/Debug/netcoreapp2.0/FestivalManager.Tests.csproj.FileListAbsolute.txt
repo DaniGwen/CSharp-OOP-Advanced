@@ -1,0 +1,16 @@
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.dll
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.pdb
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\nunit.engine.netstandard.dll
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\Mono.Cecil.dll
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\FestivalManager.Tests.deps.json
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\FestivalManager.Tests.runtimeconfig.json
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\FestivalManager.Tests.runtimeconfig.dev.json
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\FestivalManager.Tests.dll
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\FestivalManager.Tests.pdb
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.csprojAssemblyReference.cache
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.csproj.CoreCompileInputs.cache
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.AssemblyInfoInputs.cache
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.AssemblyInfo.cs
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.dll
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.pdb
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.genruntimeconfig.cache

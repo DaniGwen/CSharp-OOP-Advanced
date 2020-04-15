@@ -11,9 +11,9 @@
 	{
 		private readonly IStage stage;
 
-		public SetController()
+		public SetController(IStage stage)
 		{
-			this.stage = new Stage();
+			this.stage = stage;
 		}
 
 		public string PerformSets()

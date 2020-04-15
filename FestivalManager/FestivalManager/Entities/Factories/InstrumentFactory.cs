@@ -12,18 +12,27 @@
 	{
 		public IInstrument CreateInstrument(string type)
 		{
-			if (type == "Drums")
-			{
-				return new Drums();
-			}
-			else if (type == "Guitar")
-			{
-				return new Guitar();
-			}
-			else
-			{
-				return new Microphone();
-			}
+			//check ???
+			var typeofInstrument = Assembly.GetCallingAssembly()
+				.GetTypes()
+				.FirstOrDefault(t => t.Name == type);
+
+			var instance = (IInstrument)Activator.CreateInstance(typeofInstrument);
+
+			return instance;
+
+			//if (type == "Drums")
+			//{
+			//	return new Drums();
+			//}
+			//else if (type == "Guitar")
+			//{
+			//	return new Guitar();
+			//}
+			//else
+			//{
+			//	return new Microphone();
+			//}
 		}
 	}
 }

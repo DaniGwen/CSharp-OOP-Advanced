@@ -6,24 +6,25 @@ namespace FestivalManager.Core.IO
 {
     public class ConsoleWriter : IWriter
     {
-        private StringBuilder sb;
+        private StringBuilder stringBuilder;
         public ConsoleWriter()
         {
-            this.sb = new StringBuilder();
+            this.stringBuilder = new StringBuilder();
         }
         public void Write(string content)
         {
-            sb.Append(content);
+            stringBuilder.Append(content);
         }
 
         public void WriteLine(string content)
         {
             if (content != "END")
             {
-                sb.AppendLine(content);
+                stringBuilder.AppendLine(content);
+                return;
             }
 
-            Console.WriteLine(sb.ToString().TrimEnd());
+            Console.WriteLine(stringBuilder.ToString().TrimEnd());
         }
     }
 }
