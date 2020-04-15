@@ -14,3 +14,6 @@ C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager
 C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.dll
 C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.pdb
 C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.genruntimeconfig.cache
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\FestivalManager.dll
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\bin\Debug\netcoreapp2.0\FestivalManager.pdb
+C:\Users\AW\Documents\GitHub\CSharp-OOP Advanced\FestivalManager\FestivalManager.Tests\obj\Debug\netcoreapp2.0\FestivalManager.Tests.csproj.CopyComplete

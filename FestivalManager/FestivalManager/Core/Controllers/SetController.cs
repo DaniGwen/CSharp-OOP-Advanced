@@ -40,6 +40,7 @@
 				}
 
 				var songCount = 1;
+
 				foreach (var song in set.Songs)
 				{
 					sb.AppendLine($"-- {songCount++}. {song}");

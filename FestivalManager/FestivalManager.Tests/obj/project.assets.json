@@ -1639,6 +1639,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "FestivalManager/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/FestivalManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FestivalManager.dll": {}
+        }
       }
     }
   },
@@ -5772,10 +5782,16 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "FestivalManager/1.0.0": {
+      "type": "project",
+      "path": "../FestivalManager/FestivalManager.csproj",
+      "msbuildProject": "../FestivalManager/FestivalManager.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "FestivalManager >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 15.6.1",
       "Microsoft.NETCore.App >= 2.0.0",
       "NUnit3TestAdapter >= 3.10.0",
@@ -5807,7 +5823,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\AW\\Documents\\GitHub\\CSharp-OOP Advanced\\FestivalManager\\FestivalManager\\FestivalManager.csproj": {
+              "projectPath": "C:\\Users\\AW\\Documents\\GitHub\\CSharp-OOP Advanced\\FestivalManager\\FestivalManager\\FestivalManager.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
