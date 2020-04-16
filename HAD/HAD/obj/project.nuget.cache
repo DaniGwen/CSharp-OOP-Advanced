@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "YHlC6kq6E9fgoG4L8lnyHVJarIS4i1PwmQoAUMY+8phJPCpzPbAnUUTAo9ymoFM9FLlNdM1CIkWwBMB4yB+H7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AW\\Documents\\GitHub\\CSharp-OOP Advanced\\HAD\\HAD\\HAD.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AW\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
+    "C:\\Users\\AW\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
+    "C:\\Users\\AW\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.1.0\\microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
+    "C:\\Users\\AW\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.1.0\\microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
+    "C:\\Users\\AW\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "C:\\Users\\AW\\.nuget\\packages\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
+    "C:\\Users\\AW\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
