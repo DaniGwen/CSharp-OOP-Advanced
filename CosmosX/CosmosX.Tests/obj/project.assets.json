@@ -5849,6 +5849,7 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
+          "targetAlias": "netcoreapp2.0",
           "projectReferences": {
             "C:\\Users\\AW\\Documents\\GitHub\\CSharp-OOP Advanced\\CosmosX\\CosmosX\\CosmosX.csproj": {
               "projectPath": "C:\\Users\\AW\\Documents\\GitHub\\CSharp-OOP Advanced\\CosmosX\\CosmosX\\CosmosX.csproj"
@@ -5864,6 +5865,7 @@
     },
     "frameworks": {
       "netcoreapp2.0": {
+        "targetAlias": "netcoreapp2.0",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -5894,7 +5896,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
